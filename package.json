@@ -1,0 +1,26 @@
+{
+    "private": true,
+    "name": "repro-app",
+    "version": "1.0.0",
+    "license": "UNLICENSED",
+    "type": "module",
+    "dependencies": {
+        "@supabase/ssr": "^0.7.0",
+        "@supabase/supabase-js": "^2.76.1",
+        "@tanstack/react-router": "^1.132.41",
+        "@tanstack/react-start": "^1.133.32",
+        "lucide-react": "^0.546.0",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
+    },
+    "devDependencies": {
+        "@tanstack/nitro-v2-vite-plugin": "^1.133.19",
+        "@types/node": "^24.9.1",
+        "@types/react": "^19.2.2",
+        "@types/react-dom": "^19.2.2",
+        "@vitejs/plugin-react": "^5.1.0",
+        "knip": "^5.66.3",
+        "typescript": "^5.9.3",
+        "vite": "^7.1.12"
+    }
+}
