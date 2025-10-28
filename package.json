@@ -5,8 +5,6 @@
     "license": "UNLICENSED",
     "type": "module",
     "dependencies": {
-        "@supabase/ssr": "^0.7.0",
-        "@supabase/supabase-js": "^2.76.1",
         "@tanstack/react-router": "^1.132.41",
         "@tanstack/react-start": "^1.133.32",
         "lucide-react": "^0.546.0",
