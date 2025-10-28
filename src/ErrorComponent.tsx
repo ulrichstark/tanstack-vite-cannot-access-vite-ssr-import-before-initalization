@@ -1,9 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { useEffect } from "react";
-import { createSupabaseClient } from "./createSupabaseClient";
+import { getCookies } from "@tanstack/react-start/server";
 
 const reportErrorToServer = createServerFn().handler(() => {
-    createSupabaseClient();
+    getCookies();
 });
 
 export function ErrorComponent() {
