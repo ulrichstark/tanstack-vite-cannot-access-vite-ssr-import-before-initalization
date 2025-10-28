@@ -1,18 +1,7 @@
-import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import { ReactNode } from "react";
+import { createRootRoute } from "@tanstack/react-router";
 
 export const Route = createRootRoute({ shellComponent: ShellComponent });
 
-function ShellComponent({ children }: { children: ReactNode }) {
-    return (
-        <html>
-            <head>
-                <HeadContent />
-            </head>
-            <body>
-                <main>{children}</main>
-                <Scripts />
-            </body>
-        </html>
-    );
+function ShellComponent() {
+    return null;
 }
