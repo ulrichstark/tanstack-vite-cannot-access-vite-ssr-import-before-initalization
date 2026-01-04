@@ -4,20 +4,23 @@
     "version": "1.0.0",
     "license": "UNLICENSED",
     "type": "module",
+    "scripts": {
+        "dev": "vite --force"
+    },
     "dependencies": {
-        "@tanstack/react-router": "^1.132.41",
-        "@tanstack/react-start": "^1.133.34",
-        "lucide-react": "^0.546.0",
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0"
+        "@tanstack/react-router": "^1.144.0",
+        "@tanstack/react-start": "^1.145.4",
+        "lucide-react": "^0.562.0",
+        "react": "^19.2.3",
+        "react-dom": "^19.2.3"
     },
     "devDependencies": {
-        "@tanstack/nitro-v2-vite-plugin": "^1.133.19",
-        "@types/node": "^24.9.1",
-        "@types/react": "^19.2.2",
-        "@types/react-dom": "^19.2.2",
-        "@vitejs/plugin-react": "^5.1.0",
+        "@tanstack/nitro-v2-vite-plugin": "^1.141.0",
+        "@types/node": "^25.0.3",
+        "@types/react": "^19.2.7",
+        "@types/react-dom": "^19.2.3",
+        "@vitejs/plugin-react": "^5.1.2",
         "typescript": "^5.9.3",
-        "vite": "^7.1.12"
+        "vite": "7.1.2"
     }
 }
