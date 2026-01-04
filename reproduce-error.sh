@@ -1,27 +1,28 @@
 #!/bin/bash
 
 # Script to reproduce the SSR import error
-# Runs vite --force repeatedly until the error is found
+# Runs vite --force repeatedly until the error is found (max 5 attempts)
 
 ATTEMPT=1
+MAX_ATTEMPTS=5
 ERROR_PATTERN="Cannot access '__vite_ssr_import_"
 LOG_FILE="/tmp/vite-output-$$.log"
 
 cleanup() {
     rm -f "$LOG_FILE"
-    exit 0
+    exit 1
 }
 trap cleanup INT TERM
 
-while true; do
-    echo "Attempt #$ATTEMPT - Starting Vite..."
+while [ $ATTEMPT -le $MAX_ATTEMPTS ]; do
+    echo "Attempt #$ATTEMPT/$MAX_ATTEMPTS - Starting Vite..."
     
     # Start vite in background and capture output to file
     npx vite --force > "$LOG_FILE" 2>&1 &
     VITE_PID=$!
     
-    # Wait 10 seconds
-    sleep 10
+    # Wait 5 seconds
+    sleep 5
     
     # Check if error appeared in the log
     if grep -q "$ERROR_PATTERN" "$LOG_FILE"; then
@@ -43,3 +44,7 @@ while true; do
     ATTEMPT=$((ATTEMPT + 1))
     sleep 1
 done
+
+echo "No error found after $MAX_ATTEMPTS attempts - bug appears to be fixed"
+rm -f "$LOG_FILE"
+exit 1
